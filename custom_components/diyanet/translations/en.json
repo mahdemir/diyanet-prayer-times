@@ -1,0 +1,65 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is already configured"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "invalid_auth": "Invalid authentication",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "Email",
+                    "location_id": "Location ID",
+                    "password": "Password"
+                },
+                "description": "Enter your Diyanet credentials and location ID. Default location ID is for Utrecht (13975)."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "asr": {
+                "name": "Asr prayer time"
+            },
+            "dhuhr": {
+                "name": "Dhuhr prayer time"
+            },
+            "fajr": {
+                "name": "Fajr prayer time"
+            },
+            "gregorian_date": {
+                "name": "Gregorian date"
+            },
+            "hijri_date": {
+                "name": "Hijri date"
+            },
+            "isha": {
+                "name": "Isha prayer time"
+            },
+            "maghrib": {
+                "name": "Maghrib prayer time"
+            },
+            "qibla_time": {
+                "name": "Qibla time"
+            },
+            "sunrise": {
+                "name": "Sunrise"
+            }
+        }
+    },
+    "services": {
+        "refresh": {
+            "description": "Fetch the latest prayer times now. If a config entry ID is provided, only that entry is refreshed.",
+            "fields": {
+                "config_entry_id": {
+                    "description": "Optional: refresh only this specific Diyanet configuration entry",
+                    "name": "Config entry ID"
+                }
+            },
+            "name": "Refresh prayer times"
+        }
+    }
+}

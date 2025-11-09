@@ -1,0 +1,33 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - "v*"  # Trigger when a version tag is pushed (e.g., v1.0.0)
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create source zip (diyanet folder contents only)
+        run: |
+          cd custom_components/diyanet
+          # create a zip at the repository root with a stable name
+          zip -r "$GITHUB_WORKSPACE/diyanet-prayer-times.zip" . -x "__pycache__/*"
+
+      - name: Create GitHub release and upload asset
+        # ncipollo/release-action is maintained and can both create a release and upload files
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          generateReleaseNotes: true  # Auto-generate release notes based on PRs and commits
+          artifacts: diyanet-prayer-times.zip
+          token: ${{ secrets.GITHUB_TOKEN }}

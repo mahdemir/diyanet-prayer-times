@@ -1,0 +1,65 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is al geconfigureerd"
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_auth": "Ongeldige authenticatie",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "E-mailadres",
+                    "location_id": "Locatie-ID",
+                    "password": "Wachtwoord"
+                },
+                "description": "Voer uw Diyanet-inloggegevens en locatie-ID in. Standaard locatie-ID voor Utrecht (13975)."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "asr": {
+                "name": "Asr gebedstijd"
+            },
+            "dhuhr": {
+                "name": "Dhuhr gebedstijd"
+            },
+            "fajr": {
+                "name": "Fajr gebedstijd"
+            },
+            "gregorian_date": {
+                "name": "Gregoriaanse datum"
+            },
+            "hijri_date": {
+                "name": "Hijri datum"
+            },
+            "isha": {
+                "name": "Isha gebedstijd"
+            },
+            "maghrib": {
+                "name": "Maghrib gebedstijd"
+            },
+            "qibla_time": {
+                "name": "Qibla tijd"
+            },
+            "sunrise": {
+                "name": "Zonsopgang"
+            }
+        }
+    },
+    "services": {
+        "refresh": {
+            "description": "Haal de nieuwste gebedstijden op. Als een config entry ID is opgegeven, wordt alleen die entry ververst.",
+            "fields": {
+                "config_entry_id": {
+                    "description": "Optioneel: ververs alleen deze specifieke Diyanet configuratie",
+                    "name": "Config entry ID"
+                }
+            },
+            "name": "Gebedstijden verversen"
+        }
+    }
+}

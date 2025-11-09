@@ -1,0 +1,14 @@
+refresh:
+  name: Refresh prayer times
+  description: >-
+    Fetch the latest prayer times from Diyanet for one or all configured entries.
+  fields:
+    config_entry_id:
+      name: Config entry ID
+      description: >-
+        If provided, only refresh this specific Diyanet config entry. If omitted,
+        all loaded Diyanet entries will be refreshed.
+      example: "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"
+      required: false
+      selector:
+        text:
