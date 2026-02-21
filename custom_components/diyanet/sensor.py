@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 from homeassistant.components.sensor import SensorEntity, SensorEntityDescription
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from . import DiyanetConfigEntry
@@ -67,7 +67,7 @@ SENSOR_TYPES: tuple[DiyanetSensorEntityDescription, ...] = (
     DiyanetSensorEntityDescription(
         key="hijri_date",
         translation_key="hijri_date",
-        icon="mdi:calendar-islamic",
+        icon="mdi:calendar",
         value_fn=lambda data: data.get("hijriDateLong"),
     ),
     DiyanetSensorEntityDescription(
@@ -82,7 +82,7 @@ SENSOR_TYPES: tuple[DiyanetSensorEntityDescription, ...] = (
 async def async_setup_entry(
     hass: HomeAssistant,
     entry: DiyanetConfigEntry,
-    async_add_entities: AddEntitiesCallback,
+    async_add_entities: AddConfigEntryEntitiesCallback,
 ) -> None:
     """Set up Diyanet sensors from a config entry."""
     coordinator = entry.runtime_data
