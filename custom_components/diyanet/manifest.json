@@ -1,10 +1,13 @@
 {
   "domain": "diyanet",
   "name": "Diyanet",
-  "codeowners": ["@mahdemir"],
+  "codeowners": [
+    "@mahdemir"
+  ],
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/integrations/diyanet",
   "iot_class": "cloud_polling",
-  "quality_scale": "bronze",
-  "requirements": []
+  "issue_tracker": "https://github.com/mahdemir/diyanet-prayer-times/issues",
+  "requirements": [],
+  "version": "1.0.0"
 }
