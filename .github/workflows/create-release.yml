@@ -18,9 +18,9 @@ jobs:
 
       - name: Create source zip (HACS-compatible structure)
         run: |
-          # HACS extracts to custom_components/, so zip should contain just diyanet/ at root
-          cd custom_components
-          zip -r "$GITHUB_WORKSPACE/diyanet-prayer-times.zip" diyanet/ -x "*__pycache__*" -x "*.pyc"
+          # HACS extracts to custom_components/diyanet/, so files must be at zip root
+          cd custom_components/diyanet
+          zip -r "$GITHUB_WORKSPACE/diyanet-prayer-times.zip" . -x "*__pycache__*" -x "*.pyc"
 
       - name: Create GitHub release and upload asset
         # ncipollo/release-action is maintained and can both create a release and upload files
